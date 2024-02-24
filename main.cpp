@@ -122,7 +122,7 @@ int main() {
                 if (!statesNdka[indexInt]->has(symbols[c])) {
                     continue;
                 }
-                auto states = statesNdka[indexInt]->get(symbols[c]);
+                const auto states = statesNdka[indexInt]->get(symbols[c]);
 
                 for (auto z = 0; z < states.size(); z++) {
                     const auto index = to_string(getIndexFromVector(statesNdka, states[z]))[0];
@@ -151,7 +151,7 @@ int main() {
 
     cout << "==> DKA MAPPING <== " << newStates.size() << endl;
     for (const auto &[stateIndex, state]: newStates) {
-        auto map = newStatesMap[stateIndex];
+        const auto map = newStatesMap[stateIndex];
 
 
         for (const auto &[symbol, targetStateIndex]: map) {
